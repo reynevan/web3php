@@ -144,6 +144,23 @@ final class Eth
         return $result;
     }
 
+
+    public function getBlockByNumber(int $number): array
+    {
+        $result = $this->transporter->request('eth_getBlockByNumber', [
+            '0x' . dechex($number), false
+        ]);
+
+        /** @var array<string, string> $result */
+        assert(is_array($result));
+
+        foreach (['number', 'gasUsed', 'gasLimit', 'difficulty', 'size', 'nonce'] as $key) {
+            $result[$key] = HexToBigInteger::format($result[$key]);
+        }
+
+        return $result;
+    }
+
     /**
      * Returns the receipt of a transaction by its hash.
      * Note that the receipt is not available for pending transactions.
