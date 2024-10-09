@@ -1,5 +1,5 @@
 {
-    "name": "web3-php/web3",
+    "name": "reynevan/web3php",
     "description": "Web3 PHP is a supercharged PHP API client that allows you to interact with a generic Ethereum RPC.",
     "keywords": ["php", "web3", "ethereum", "json-rpc", "api", "client"],
     "license": "MIT",
