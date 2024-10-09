@@ -145,10 +145,10 @@ final class Eth
     }
 
 
-    public function getBlockByNumber(int $number): array
+    public function getBlockByNumber(int $number, bool $txDetails = false): array
     {
         $result = $this->transporter->request('eth_getBlockByNumber', [
-            '0x' . dechex($number), false
+            '0x' . dechex($number), $txDetails
         ]);
 
         /** @var array<string, string> $result */
