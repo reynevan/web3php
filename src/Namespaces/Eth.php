@@ -161,7 +161,7 @@ final class Eth
         foreach ($result['transactions'] as $txKey => $transaction) {
             foreach (['gas', 'gasPrice', 'maxFeePerGas', 'maxPriorityFeePerGas', 'nonce', 'transactionIndex', 'type'] as $key) {
                 if (!isset($result['transactions'][$txKey][$key])) { continue; }
-                $result['transactions'][$txKey][$key] = HexToBigInteger::format($result[$key]);
+                $result['transactions'][$txKey][$key] = HexToBigInteger::format($result['transactions'][$txKey][$key]);
             }
         }
 
