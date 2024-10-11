@@ -154,7 +154,7 @@ final class Eth
         /** @var array<string, string> $result */
         assert(is_array($result));
 
-        foreach (['number', 'gasUsed', 'gasLimit', 'difficulty', 'size', 'nonce'] as $key) {
+        foreach (['baseFeePerGas','blobGasUsed', 'excessBlobGas', 'timestamp', 'number', 'gasUsed', 'gasLimit', 'difficulty', 'size', 'nonce'] as $key) {
             $result[$key] = HexToBigInteger::format($result[$key]);
         }
 
